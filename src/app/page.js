@@ -1,16 +1,73 @@
 "use client";
 
-import { Parallax } from "react-parallax";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
+  const introRef = useRef(null);
+  const vueRef = useRef(null);
+  const tailwindRef = useRef(null);
+  const bootstrapRef = useRef(null);
+
   useEffect(() => {
-    setTimeout(() => {
+    if (!isLoading && vueRef.current && tailwindRef.current) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: vueRef.current, // can be any section containing both
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      tl.fromTo(
+        vueRef.current,
+        { y: 100, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
+      )
+        .fromTo(
+          tailwindRef.current,
+          { y: 100, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
+          // "+=0.1" // optional delay between animations
+        )
+        .fromTo(
+          bootstrapRef.current,
+          { y: 100, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
+          // "+=0.1"
+        );
+    }
+  }, [isLoading]);
+
+  /** hero section*/
+  useEffect(() => {
+    if (!isLoading && introRef.current) {
+      gsap.to(introRef.current, {
+        opacity: 0,
+        y: -50, // move up 50px
+        ease: "none",
+        scrollTrigger: {
+          trigger: introRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+    }
+  }, [isLoading]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1500);
+    }, 1000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   if (isLoading) {
@@ -24,32 +81,28 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black font-sans text-white">
       {/* Hero Section with Parallax */}
-      <Parallax bgImage="/path/to/your/background-image.jpg" strength={100}>
-        <section className="py-16 flex flex-col p-50">
-          {" "}
-          {/* Added pr-8 */}
-          <div className="relative w-32 h-32 rounded-full overflow-hidden mb-4">
-            {/* Image */}
-          </div>
-          <p className="text-lg text-[#DE847B] mb-4 text-left">Hi ! , I am</p>
-          <h1 className="text-4xl font-bold text-[#DEB3AD] mb-2 ">
-            Hasya Binti Abdul Manan
-          </h1>
-          <p className="text-md text-[#DE847B] mb-4 text-left">
-            Junior developer with a solid grounding in full-stack development.
-            <br></br>
-            Continuously expanding my skillset in the ever-evolving web
-            development landscape.
-          </p>
-          {/* Optional: Social links or a brief call to action */}
-        </section>
-      </Parallax>
+
+      <section ref={introRef} className="py-16 flex flex-col p-50">
+        {" "}
+        <p className="text-lg text-[#DE847B] mb-4 text-left">Hi ! , I am</p>
+        <h1 className="text-4xl font-bold text-[#DEB3AD] mb-2 ">
+          Hasya Binti Abdul Manan
+        </h1>
+        <p className="text-md text-[#DE847B] mb-4 text-left">
+          <span className="text-[#a2a0a0] text-2xl">Junior developer</span> with
+          a solid grounding in full-stack development.
+          <br></br>
+          Aspiring to contribute meaningfully while expanding my skillset in
+          this dynamic field.
+        </p>
+        {/* Optional: Social links or a brief call to action */}
+      </section>
 
       {/* About Me Section */}
       <section className="py-16">
         {" "}
         {/* Removed background-white */}
-        <div className="container mx-auto text-center">
+        <div className="container mx-auto text-center ">
           <h2 className="text-3xl font-bold text-[#B95C50] mb-6">About Me</h2>{" "}
           {/* Using another of your colors for heading */}
           <p className="text-lg text-gray-400">
@@ -60,17 +113,90 @@ export default function Home() {
           </p>
         </div>
       </section>
+      {/* Stack Section */}
+      <section className="py-16 bg-black">
+        <div className="container mx-auto text-left pl-8 sm:pl-16 md:pl-24 lg:pl-32 xl:pl-48 py-16">
+          <h1 className="text-3xl font-bold text-[#DEB3AD] mb-6">My Stack</h1>
+          <div className="mb-8">
+            <h3 className="text-xl font-semibold text-[#DEB3AD] mb-2">
+              Frontend
+            </h3>
+            <div className="ml-4">
+              <div ref={vueRef} className="flex items-center gap-4 mt-2">
+                <div className="w-10 h-10 relative">
+                  <Image
+                    src="/logos/vue.png"
+                    alt="Vue.js Logo"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
+                <span className="text-gray-400 text-2xl">Vue.js</span>
+              </div>
+              <div ref={tailwindRef} className="flex items-center gap-4 mt-2">
+                <div className="w-10 h-10 relative">
+                  <Image
+                    src="/logos/tailwind-css.png"
+                    alt="Tailwind CSS Logo"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
+                <span className="text-gray-400 text-2xl">Tailwind CSS</span>
+              </div>
+              <div ref={bootstrapRef} className="flex items-center gap-4 mt-2">
+                <div className="w-10 h-10 relative">
+                  <Image
+                    src="/logos/bootstrap.png"
+                    alt="Bootstrap Logo"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
+                <span className="text-gray-400 text-2xl">Bootstrap</span>
+              </div>
+            </div>
+          </div>
+          <div className="pl-4">
+            <h3 className="text-xl font-semibold text-[#DEB3AD] mb-2">
+              Backend
+            </h3>
+            <div className="ml-4">
+              <div className="flex items-center gap-4 mt-2">
+                {/* <div className="w-10 h-10 relative">
+                  <Image
+                    src="/logos/prisma.png"
+                    alt="Prisma Logo"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div> */}
+                <span className="text-gray-400">Prisma</span>
+              </div>
+              <div className="flex items-center gap-4 mt-2">
+                {/* <div className="w-10 h-10 relative">
+                  <Image
+                    src="/logos/laravel.png"
+                    alt="Laravel Logo"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div> */}
+                <span className="text-gray-400">Laravel</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <section className="py-16 bg-black pl-8 sm:pl-16 md:pl-24 lg:pl-32 xl:pl-48"></section>
       {/* Projects Section */}
       <section className="py-16">
         {" "}
-        {/* Removed background-pink-100 */}
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold text-[#DEB3AD] mb-6">Projects</h2>{" "}
-          {/* Using one of your colors for heading */}
           <p className="text-lg text-gray-400">
             {" "}
-            {/* Using a light gray for readable text on black */}
             Showcase your projects here! You can list them with descriptions and
             links.
           </p>
@@ -78,7 +204,7 @@ export default function Home() {
       </section>
 
       <footer className="bg-gray-800 text-gray-300 py-4 text-center border-t border-gray-700">
-        <p>&copy; {new Date().getFullYear()} Your Name</p>
+        <p>&copy; {new Date().getFullYear()} Hasya Binti Abdul Manan</p>
       </footer>
     </div>
   );
