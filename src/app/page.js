@@ -14,6 +14,9 @@ export default function Home() {
   const vueRef = useRef(null);
   const tailwindRef = useRef(null);
   const bootstrapRef = useRef(null);
+  const aboutMeSectionRef = useRef(null);
+  const aboutMeHeadingRef = useRef(null);
+  const aboutMeParagraphRef = useRef(null);
 
   useEffect(() => {
     if (!isLoading && vueRef.current && tailwindRef.current) {
@@ -62,6 +65,59 @@ export default function Home() {
     }
   }, [isLoading]);
 
+  /** About Me Section Animation (using similar useEffect syntax) */
+  useEffect(() => {
+    if (
+      !isLoading &&
+      aboutMeSectionRef.current &&
+      aboutMeHeadingRef.current &&
+      aboutMeParagraphRef.current
+    ) {
+      gsap.fromTo(
+        aboutMeHeadingRef.current,
+        { opacity: 0, y: -30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: aboutMeSectionRef.current,
+            start: "top 80%", // Adjust as needed
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      gsap.fromTo(
+        aboutMeParagraphRef.current,
+        { opacity: 0, y: -50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: aboutMeSectionRef.current,
+            start: "top 70%", // Adjust to start slightly before the heading
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+      // Fade out the entire About Me section after it has been fully viewed
+      gsap.to(aboutMeSectionRef.current, {
+        opacity: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: aboutMeSectionRef.current,
+          start: "bottom center", // Start fading out when the bottom of the section hits the center of the viewport
+          end: "bottom top", // Fully faded out when the bottom of the section reaches the top of the viewport
+          scrub: true, // Link the animation to the scroll
+        },
+      });
+    }
+  }, [isLoading]);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -99,17 +155,26 @@ export default function Home() {
       </section>
 
       {/* About Me Section */}
-      <section className="py-16">
+      <section ref={aboutMeSectionRef} className="py-16">
         {" "}
         {/* Removed background-white */}
         <div className="container mx-auto text-center ">
-          <h2 className="text-3xl font-bold text-[#B95C50] mb-6">About Me</h2>{" "}
+          <h2
+            ref={aboutMeHeadingRef}
+            className="text-3xl font-bold text-[#B95C50] mb-6"
+          >
+            About Me
+          </h2>{" "}
           {/* Using another of your colors for heading */}
-          <p className="text-lg text-gray-400">
+          <p ref={aboutMeParagraphRef} className="text-lg text-gray-400 px-50">
             {" "}
-            {/* Using a light gray for readable text on black */}
-            Here you can write a more detailed description about yourself, your
-            background, skills, and interests.
+            {/* Using a light gray for readable text on black */}A junior
+            developer with two years of experience in developing web
+            applications. Possesses a solid foundation in software development
+            principles and a strong eagerness to learn and adapt to new
+            technologies and frameworks. A collaborative team player with a
+            proactive approach to problem-solving and a commitment to delivering
+            high-quality applications.
           </p>
         </div>
       </section>
