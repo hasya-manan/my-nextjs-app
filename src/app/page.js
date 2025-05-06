@@ -65,7 +65,7 @@ export default function Home() {
     }
   }, [isLoading]);
 
-  /** About Me Section Animation (using similar useEffect syntax) */
+  /** About Me Section Animation  */
   useEffect(() => {
     if (
       !isLoading &&
@@ -99,7 +99,7 @@ export default function Home() {
           ease: "power3.out",
           scrollTrigger: {
             trigger: aboutMeSectionRef.current,
-            start: "top 70%", // Adjust to start slightly before the heading
+            start: "top 70%",
             toggleActions: "play none none reverse",
           },
         }
@@ -155,7 +155,7 @@ export default function Home() {
       </section>
 
       {/* About Me Section */}
-      <section ref={aboutMeSectionRef} className="py-16">
+      <section ref={aboutMeSectionRef} className="py-14">
         {" "}
         {/* Removed background-white */}
         <div className="container mx-auto text-center ">
@@ -181,73 +181,99 @@ export default function Home() {
       {/* Stack Section */}
       <section className="py-16 bg-black">
         <div className="container mx-auto text-left pl-8 sm:pl-16 md:pl-24 lg:pl-32 xl:pl-48 py-16">
-          <h1 className="text-3xl font-bold text-[#DEB3AD] mb-6">My Stack</h1>
+          <h1 className="text-xl  text-[#DEB3AD] mb-10">
+            My technologies and tools
+          </h1>
           <div className="mb-8">
-            <h3 className="text-xl font-semibold text-[#DEB3AD] mb-2">
-              Frontend
-            </h3>
-            <div className="ml-4">
-              <div ref={vueRef} className="flex items-center gap-4 mt-2">
-                <div className="w-10 h-10 relative">
-                  <Image
-                    src="/logos/vue.png"
-                    alt="Vue.js Logo"
-                    layout="fill"
-                    objectFit="contain"
-                  />
+            <div className="flex">
+              <h3 className="text-xl font-semibold text-[#DEB3AD] mr-50">
+                Frontend
+              </h3>
+              <div className="grid grid-cols-4 gap-4">
+                {" "}
+                {/* Use grid for 2 columns initially */}
+                <div ref={vueRef} className="flex items-center gap-4">
+                  <div className="w-8 h-8 relative">
+                    <Image
+                      src="/logos/vue.png"
+                      alt="Vue.js Logo"
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
+                  <span className="text-gray-400 text-lg sm:text-xl">
+                    Vue.js
+                  </span>
                 </div>
-                <span className="text-gray-400 text-2xl">Vue.js</span>
-              </div>
-              <div ref={tailwindRef} className="flex items-center gap-4 mt-2">
-                <div className="w-10 h-10 relative">
-                  <Image
-                    src="/logos/tailwind-css.png"
-                    alt="Tailwind CSS Logo"
-                    layout="fill"
-                    objectFit="contain"
-                  />
+                <div ref={tailwindRef} className="flex items-center gap-4">
+                  <div className="w-10 h-10 relative">
+                    <Image
+                      src="/logos/tailwind-css.png"
+                      alt="Tailwind CSS Logo"
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
+                  <span className="text-gray-400 text-lg sm:text-xl">
+                    Tailwind CSS
+                  </span>
                 </div>
-                <span className="text-gray-400 text-2xl">Tailwind CSS</span>
-              </div>
-              <div ref={bootstrapRef} className="flex items-center gap-4 mt-2">
-                <div className="w-10 h-10 relative">
-                  <Image
-                    src="/logos/bootstrap.png"
-                    alt="Bootstrap Logo"
-                    layout="fill"
-                    objectFit="contain"
-                  />
+                <div ref={bootstrapRef} className="flex items-center gap-4">
+                  <div className="w-10 h-10 relative">
+                    <Image
+                      src="/logos/bootstrap.png"
+                      alt="Bootstrap Logo"
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
+                  <span className="text-gray-400 text-lg sm:text-xl">
+                    Bootstrap
+                  </span>
                 </div>
-                <span className="text-gray-400 text-2xl">Bootstrap</span>
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 relative">
+                    {/* Add JavaScript Logo */}
+                    {/* <Image
+                      src="/logos/javascript.png"
+                      alt="JavaScript Logo"
+                      layout="fill"
+                      objectFit="contain"
+                    /> */}
+                  </div>
+                  <span className="text-gray-400 text-lg sm:text-xl">
+                    JavaScript
+                  </span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 relative">
+                    {/* Add React Logo */}
+                    {/* <Image
+                      src="/logos/react.png"
+                      alt="React Logo"
+                      layout="fill"
+                      objectFit="contain"
+                    /> */}
+                  </div>
+                  <span className="text-gray-400 text-lg sm:text-xl">
+                    React
+                  </span>
+                </div>
+                {/* Add more frontend technologies here if needed */}
               </div>
             </div>
-          </div>
-          <div className="pl-4">
-            <h3 className="text-xl font-semibold text-[#DEB3AD] mb-2">
-              Backend
-            </h3>
-            <div className="ml-4">
-              <div className="flex items-center gap-4 mt-2">
-                {/* <div className="w-10 h-10 relative">
-                  <Image
-                    src="/logos/prisma.png"
-                    alt="Prisma Logo"
-                    layout="fill"
-                    objectFit="contain"
-                  />
-                </div> */}
-                <span className="text-gray-400">Prisma</span>
-              </div>
-              <div className="flex items-center gap-4 mt-2">
-                {/* <div className="w-10 h-10 relative">
-                  <Image
-                    src="/logos/laravel.png"
-                    alt="Laravel Logo"
-                    layout="fill"
-                    objectFit="contain"
-                  />
-                </div> */}
-                <span className="text-gray-400">Laravel</span>
+            {/* Backend Section remains the same */}
+            <div className="mt-8 pl-4">
+              <h3 className="text-xl font-semibold text-[#DEB3AD] mb-2">
+                Backend
+              </h3>
+              <div className="ml-4">
+                <div className="flex items-center gap-4 mt-2">
+                  <span className="text-gray-400">Prisma</span>
+                </div>
+                <div className="flex items-center gap-4 mt-2">
+                  <span className="text-gray-400">Laravel</span>
+                </div>
               </div>
             </div>
           </div>
