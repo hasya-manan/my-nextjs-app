@@ -256,12 +256,12 @@ export default function Home() {
         </div>
       </section>
       {/* Stack Section */}
-      <section className="py-16 bg-black">
+      <section className="py-20 sm:py-2 bg-black">
         <div className="container mx-auto text-left pl-8 sm:pl-16 md:pl-24 lg:pl-32 xl:pl-48 py-16">
           <h1 className="text-xl  text-[#DEB3AD] mb-10">
             My technologies and tools
           </h1>
-          <div className="mb-8 mx-20">
+          <div className=" mx-10 sm:mx-2">
             <div className="flex">
               {/* <h3 className="text-xl font-semibold text-[#DEB3AD] mr-50">
                 Frontend
@@ -453,9 +453,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 bg-black pl-8 sm:pl-16 md:pl-24 lg:pl-32 xl:pl-48"></section>
       {/* Projects Section */}
-      <section className="py-16">
+      <section className="py-10">
         {" "}
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold text-[#DEB3AD] mb-6">Projects</h2>{" "}
