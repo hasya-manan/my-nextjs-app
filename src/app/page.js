@@ -209,7 +209,10 @@ export default function Home() {
     <div className="min-h-screen bg-black font-sans text-white">
       {/* Hero Section with Parallax */}
 
-      <section ref={introRef} className="py-16 flex flex-col p-50">
+      <section
+        ref={introRef}
+        className="py-16 flex flex-col px-4 sm:px-16  text-center sm:text-left"
+      >
         {" "}
         <p className="text-lg text-[#DE847B] mb-4 text-left">Hi ! , I am</p>
         <h1 className="text-4xl font-bold text-[#DEB3AD] mb-2 ">
@@ -226,18 +229,21 @@ export default function Home() {
       </section>
 
       {/* About Me Section */}
-      <section ref={aboutMeSectionRef} className="py-14">
+      <section ref={aboutMeSectionRef} className="py-2">
         {" "}
         {/* Removed background-white */}
         <div className="container mx-auto text-center ">
           <h2
             ref={aboutMeHeadingRef}
-            className="text-3xl font-bold text-[#B95C50] mb-6"
+            className="text-3xl font-bold text-[#B95C50] mb-2"
           >
             About Me
           </h2>{" "}
           {/* Using another of your colors for heading */}
-          <p ref={aboutMeParagraphRef} className="text-lg text-gray-400 px-50">
+          <p
+            ref={aboutMeParagraphRef}
+            className="text-lg text-gray-400 px-4 sm:px-2 max-w-3xl mx-auto"
+          >
             {" "}
             {/* Using a light gray for readable text on black */}A junior
             developer with two years of experience in developing web
