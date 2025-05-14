@@ -17,6 +17,16 @@ export default function Home() {
   const aboutMeSectionRef = useRef(null);
   const aboutMeHeadingRef = useRef(null);
   const aboutMeParagraphRef = useRef(null);
+  const javascriptRef = useRef(null);
+  const prismaRef = useRef(null);
+  const nuxtRef = useRef(null);
+  const laravelRef = useRef(null);
+  const githubRef = useRef(null);
+  const postmanRef = useRef(null);
+  const vscodeRef = useRef(null);
+  const mysqlRef = useRef(null);
+  const cpanelRef = useRef(null);
+  const nginxRef = useRef(null);
 
   useEffect(() => {
     if (!isLoading && vueRef.current && tailwindRef.current) {
@@ -31,18 +41,79 @@ export default function Home() {
       tl.fromTo(
         vueRef.current,
         { y: 100, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
+        { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }
       )
         .fromTo(
           tailwindRef.current,
           { y: 100, opacity: 0 },
-          { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
+          { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }
           // "+=0.1" // optional delay between animations
         )
         .fromTo(
           bootstrapRef.current,
           { y: 100, opacity: 0 },
-          { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
+          { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }
+          // "+=0.1"
+        )
+        .fromTo(
+          javascriptRef.current,
+          { y: 100, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }
+          // "+=0.1"
+        )
+        .fromTo(
+          nuxtRef.current,
+          { y: 100, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }
+          // "+=0.1"
+        )
+        .fromTo(
+          prismaRef.current,
+          { y: 100, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }
+          // "+=0.1"
+        )
+
+        .fromTo(
+          laravelRef.current,
+          { y: 100, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }
+          // "+=0.1"
+        )
+        .fromTo(
+          githubRef.current,
+          { y: 100, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }
+          // "+=0.1"
+        )
+        .fromTo(
+          postmanRef.current,
+          { y: 100, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }
+          // "+=0.1"
+        )
+        .fromTo(
+          vscodeRef.current,
+          { y: 100, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }
+          // "+=0.1"
+        )
+        .fromTo(
+          mysqlRef.current,
+          { y: 100, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }
+          // "+=0.1"
+        )
+        .fromTo(
+          cpanelRef.current,
+          { y: 100, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }
+          // "+=0.1"
+        )
+        .fromTo(
+          nginxRef.current,
+          { y: 100, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }
           // "+=0.1"
         );
     }
@@ -184,12 +255,12 @@ export default function Home() {
           <h1 className="text-xl  text-[#DEB3AD] mb-10">
             My technologies and tools
           </h1>
-          <div className="mb-8">
+          <div className="mb-8 mx-20">
             <div className="flex">
-              <h3 className="text-xl font-semibold text-[#DEB3AD] mr-50">
+              {/* <h3 className="text-xl font-semibold text-[#DEB3AD] mr-50">
                 Frontend
-              </h3>
-              <div className="grid grid-cols-4 gap-4">
+              </h3> */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                 {" "}
                 {/* Use grid for 2 columns initially */}
                 <div ref={vueRef} className="flex items-center gap-4">
@@ -214,7 +285,7 @@ export default function Home() {
                       objectFit="contain"
                     />
                   </div>
-                  <span className="text-gray-400 text-lg sm:text-xl">
+                  <span className="text-gray-400 text-md sm:text-xl">
                     Tailwind CSS
                   </span>
                 </div>
@@ -231,49 +302,145 @@ export default function Home() {
                     Bootstrap
                   </span>
                 </div>
-                <div className="flex items-center gap-4">
+                <div ref={javascriptRef} className="flex items-center gap-4">
                   <div className="w-10 h-10 relative">
                     {/* Add JavaScript Logo */}
-                    {/* <Image
-                      src="/logos/javascript.png"
+                    <Image
+                      src="/logos/javascript-js.svg"
                       alt="JavaScript Logo"
                       layout="fill"
                       objectFit="contain"
-                    /> */}
+                    />
                   </div>
                   <span className="text-gray-400 text-lg sm:text-xl">
                     JavaScript
                   </span>
                 </div>
-                <div className="flex items-center gap-4">
+                <div ref={nuxtRef} className="flex items-center gap-4">
                   <div className="w-10 h-10 relative">
-                    {/* Add React Logo */}
-                    {/* <Image
-                      src="/logos/react.png"
-                      alt="React Logo"
+                    {/* Add JavaScript Logo */}
+                    <Image
+                      src="/logos/nuxt.svg"
+                      alt="nuxt Logo"
                       layout="fill"
                       objectFit="contain"
-                    /> */}
+                    />
+                  </div>
+                  <span className="text-gray-400 text-lg sm:text-xl">Nuxt</span>
+                </div>
+                <div ref={prismaRef} className="flex items-center gap-4">
+                  <div className="w-10 h-10 relative">
+                    {/* Add JavaScript Logo */}
+                    <Image
+                      src="/logos/prisma.svg"
+                      alt="prisma Logo"
+                      layout="fill"
+                      objectFit="contain"
+                    />
                   </div>
                   <span className="text-gray-400 text-lg sm:text-xl">
-                    React
+                    Prisma
+                  </span>
+                </div>
+                <div ref={laravelRef} className="flex items-center gap-4">
+                  <div className="w-10 h-10 relative">
+                    {/* Add JavaScript Logo */}
+                    <Image
+                      src="/logos/laravel.svg"
+                      alt="Laravel Logo"
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
+                  <span className="text-gray-400 text-lg sm:text-xl">
+                    Laravel
+                  </span>
+                </div>
+                <div ref={githubRef} className="flex items-center gap-4">
+                  <div className="w-10 h-10 relative">
+                    {/* Add JavaScript Logo */}
+                    <Image
+                      src="/logos/github.svg"
+                      alt="github Logo"
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
+                  <span className="text-gray-400 text-lg sm:text-xl">
+                    gitHub
+                  </span>
+                </div>
+                <div ref={postmanRef} className="flex items-center gap-4">
+                  <div className="w-10 h-10 relative">
+                    {/* Add JavaScript Logo */}
+                    <Image
+                      src="/logos/postman.svg"
+                      alt="postman Logo"
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
+                  <span className="text-gray-400 text-lg sm:text-xl">
+                    Postman
+                  </span>
+                </div>
+                <div ref={vscodeRef} className="flex items-center gap-4">
+                  <div className="w-8 h-8 relative">
+                    {/* Add JavaScript Logo */}
+                    <Image
+                      src="/logos/visual-studio-code.svg"
+                      alt="vscode Logo"
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
+                  <span className="text-gray-400 text-sm sm:text-xl">
+                    Visual Studio Code
+                  </span>
+                </div>
+                <div ref={mysqlRef} className="flex items-center gap-4">
+                  <div className="w-14 h-14 relative">
+                    {/* Add JavaScript Logo */}
+                    <Image
+                      src="/logos/mysql.svg"
+                      alt="mysql Logo"
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
+                  <span className="text-gray-400 text-sm sm:text-xl">
+                    MySQL
+                  </span>
+                </div>
+                <div ref={cpanelRef} className="flex items-center gap-4">
+                  <div className="w-14 h-14 relative">
+                    {/* Add JavaScript Logo */}
+                    <Image
+                      src="/logos/cpanel.svg"
+                      alt="cpanel Logo"
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
+                  <span className="text-gray-400 text-sm sm:text-xl">
+                    cpanel
+                  </span>
+                </div>
+                <div ref={nginxRef} className="flex items-center gap-4">
+                  <div className="w-12 h-12 relative">
+                    {/* Add JavaScript Logo */}
+                    <Image
+                      src="/logos/nginx.svg"
+                      alt="nginx Logo"
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
+                  <span className="text-gray-400 text-sm sm:text-xl">
+                    nginx
                   </span>
                 </div>
                 {/* Add more frontend technologies here if needed */}
-              </div>
-            </div>
-            {/* Backend Section remains the same */}
-            <div className="mt-8 pl-4">
-              <h3 className="text-xl font-semibold text-[#DEB3AD] mb-2">
-                Backend
-              </h3>
-              <div className="ml-4">
-                <div className="flex items-center gap-4 mt-2">
-                  <span className="text-gray-400">Prisma</span>
-                </div>
-                <div className="flex items-center gap-4 mt-2">
-                  <span className="text-gray-400">Laravel</span>
-                </div>
               </div>
             </div>
           </div>
