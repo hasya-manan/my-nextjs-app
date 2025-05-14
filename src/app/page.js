@@ -13,6 +13,7 @@ export default function Home() {
   const introRef = useRef(null);
   const vueRef = useRef(null);
   const tailwindRef = useRef(null);
+  const roseuiRef = useRef(null);
   const bootstrapRef = useRef(null);
   const aboutMeSectionRef = useRef(null);
   const aboutMeHeadingRef = useRef(null);
@@ -48,6 +49,12 @@ export default function Home() {
           { y: 100, opacity: 0 },
           { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }
           // "+=0.1" // optional delay between animations
+        )
+        .fromTo(
+          roseuiRef.current,
+          { y: 100, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }
+          // "+=0.1"
         )
         .fromTo(
           bootstrapRef.current,
@@ -293,6 +300,20 @@ export default function Home() {
                   </div>
                   <span className="text-gray-400 text-md sm:text-xl">
                     Tailwind CSS
+                  </span>
+                </div>
+                <div ref={roseuiRef} className="flex items-center gap-4">
+                  <div className="w-10 h-10 relative">
+                    {/* Add JavaScript Logo */}
+                    <Image
+                      src="/logos/roseui.png"
+                      alt="roseui Logo"
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
+                  <span className="text-gray-400 text-sm sm:text-xl">
+                    Rose UI
                   </span>
                 </div>
                 <div ref={bootstrapRef} className="flex items-center gap-4">
