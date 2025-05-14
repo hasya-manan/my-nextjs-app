@@ -475,14 +475,26 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-10">
-        {" "}
+      <section className="py-10 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold text-[#DEB3AD] mb-6">Projects</h2>{" "}
-          <p className="text-lg text-gray-400">
-            {" "}
-            Showcase your projects here! You can list them with descriptions and
-            links.
+          <h2 className="text-3xl font-bold text-[#DEB3AD] mb-6">Projects</h2>
+          <p className="text-xl text-gray-400 text-left px-10 sm:px-6 lg:px-8 mb-5">
+            Projects Name: e-khairat 2.0
+          </p>
+          <p className="text-md text-gray-400 text-left px-10 sm:px-6 lg:px-8 mb-3">
+            Technologies Used: Vue.js, Nuxt 3, Tailwind CSS, MySQL, Nginx,
+            Prisma and Postman
+          </p>
+          <p className="text-md text-gray-400 text-left px-10 sm:px-6 lg:px-8">
+            Description:
+          </p>
+          <p className="text-md text-gray-400 text-left px-10 sm:px-6 lg:px-8">
+            E-Khairat refers to an online platform or system used by mosques,
+            suraus, and other Islamic organizations in Malaysia to manage and
+            administer Khairat Kematian (death welfare) programs. It allows for
+            the online registration of members, payment of contributions, and
+            management of claims, ensuring a more organized and efficient system
+            for fulfilling the Fardhu Kifayah (collective obligation).
           </p>
         </div>
       </section>
