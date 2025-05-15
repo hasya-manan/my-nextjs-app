@@ -264,19 +264,19 @@ export default function Home() {
       </section>
       {/* Stack Section */}
       <section className="py-20 sm:py-2 bg-black">
-        <div className="container mx-auto text-left pl-8 sm:pl-16 md:pl-24 lg:pl-32 xl:pl-48 py-16">
-          <h1 className="text-xl  text-[#DEB3AD] mb-10">
+        <div className="container mx-auto text-center px-4 py-16">
+          <h1 className="text-3xl font-bold text-[#DEB3AD] mb-10">
             My technologies and tools
           </h1>
-          <div className=" mx-10 sm:mx-2">
-            <div className="flex">
+          <div className="flex justify-center px-4">
+            <div className="w-full max-w-7xl">
               {/* <h3 className="text-xl font-semibold text-[#DEB3AD] mr-50">
                 Frontend
               </h3> */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 justify-items-center">
                 {" "}
                 {/* Use grid for 2 columns initially */}
-                <div ref={vueRef} className="flex items-center gap-4">
+                <div ref={vueRef} className="flex flex-col items-center gap-2">
                   <div className="w-8 h-8 relative">
                     <Image
                       src="/logos/vue.png"
@@ -289,7 +289,10 @@ export default function Home() {
                     Vue.js
                   </span>
                 </div>
-                <div ref={tailwindRef} className="flex items-center gap-4">
+                <div
+                  ref={tailwindRef}
+                  className="flex flex-col items-center gap-2"
+                >
                   <div className="w-10 h-10 relative">
                     <Image
                       src="/logos/tailwind-css.png"
@@ -302,7 +305,10 @@ export default function Home() {
                     Tailwind CSS
                   </span>
                 </div>
-                <div ref={roseuiRef} className="flex items-center gap-4">
+                <div
+                  ref={roseuiRef}
+                  className="flex flex-col items-center gap-2"
+                >
                   <div className="w-10 h-10 relative">
                     {/* Add JavaScript Logo */}
                     <Image
@@ -316,7 +322,10 @@ export default function Home() {
                     Rose UI
                   </span>
                 </div>
-                <div ref={bootstrapRef} className="flex items-center gap-4">
+                <div
+                  ref={bootstrapRef}
+                  className="flex flex-col items-center gap-2"
+                >
                   <div className="w-10 h-10 relative">
                     <Image
                       src="/logos/bootstrap.png"
@@ -329,7 +338,10 @@ export default function Home() {
                     Bootstrap
                   </span>
                 </div>
-                <div ref={javascriptRef} className="flex items-center gap-4">
+                <div
+                  ref={javascriptRef}
+                  className="flex flex-col items-center gap-2"
+                >
                   <div className="w-10 h-10 relative">
                     {/* Add JavaScript Logo */}
                     <Image
@@ -343,7 +355,7 @@ export default function Home() {
                     JavaScript
                   </span>
                 </div>
-                <div ref={nuxtRef} className="flex items-center gap-4">
+                <div ref={nuxtRef} className="flex flex-col items-center gap-2">
                   <div className="w-10 h-10 relative">
                     {/* Add JavaScript Logo */}
                     <Image
@@ -355,7 +367,10 @@ export default function Home() {
                   </div>
                   <span className="text-gray-400 text-lg sm:text-xl">Nuxt</span>
                 </div>
-                <div ref={prismaRef} className="flex items-center gap-4">
+                <div
+                  ref={prismaRef}
+                  className="flex flex-col items-center gap-2"
+                >
                   <div className="w-10 h-10 relative">
                     {/* Add JavaScript Logo */}
                     <Image
@@ -369,7 +384,10 @@ export default function Home() {
                     Prisma
                   </span>
                 </div>
-                <div ref={laravelRef} className="flex items-center gap-4">
+                <div
+                  ref={laravelRef}
+                  className="flex flex-col items-center gap-2"
+                >
                   <div className="w-10 h-10 relative">
                     {/* Add JavaScript Logo */}
                     <Image
@@ -383,7 +401,10 @@ export default function Home() {
                     Laravel
                   </span>
                 </div>
-                <div ref={githubRef} className="flex items-center gap-4">
+                <div
+                  ref={githubRef}
+                  className="flex flex-col items-center gap-2"
+                >
                   <div className="w-10 h-10 relative">
                     {/* Add JavaScript Logo */}
                     <Image
@@ -397,7 +418,10 @@ export default function Home() {
                     gitHub
                   </span>
                 </div>
-                <div ref={postmanRef} className="flex items-center gap-4">
+                <div
+                  ref={postmanRef}
+                  className="flex flex-col items-center gap-2"
+                >
                   <div className="w-10 h-10 relative">
                     {/* Add JavaScript Logo */}
                     <Image
@@ -411,7 +435,10 @@ export default function Home() {
                     Postman
                   </span>
                 </div>
-                <div ref={vscodeRef} className="flex items-center gap-4">
+                <div
+                  ref={vscodeRef}
+                  className="flex flex-col items-center gap-2"
+                >
                   <div className="w-8 h-8 relative">
                     {/* Add JavaScript Logo */}
                     <Image
@@ -425,7 +452,10 @@ export default function Home() {
                     Visual Studio Code
                   </span>
                 </div>
-                <div ref={mysqlRef} className="flex items-center gap-4">
+                <div
+                  ref={mysqlRef}
+                  className="flex flex-col items-center gap-2"
+                >
                   <div className="w-14 h-14 relative">
                     {/* Add JavaScript Logo */}
                     <Image
@@ -439,7 +469,10 @@ export default function Home() {
                     MySQL
                   </span>
                 </div>
-                <div ref={cpanelRef} className="flex items-center gap-4">
+                <div
+                  ref={cpanelRef}
+                  className="flex flex-col items-center gap-2"
+                >
                   <div className="w-14 h-14 relative">
                     {/* Add JavaScript Logo */}
                     <Image
@@ -453,7 +486,10 @@ export default function Home() {
                     cpanel
                   </span>
                 </div>
-                <div ref={nginxRef} className="flex items-center gap-4">
+                <div
+                  ref={nginxRef}
+                  className="flex flex-col items-center gap-2"
+                >
                   <div className="w-12 h-12 relative">
                     {/* Add JavaScript Logo */}
                     <Image
@@ -478,28 +514,170 @@ export default function Home() {
       <section className="py-10 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold text-[#DEB3AD] mb-6">Projects</h2>
-          <p className="text-xl text-gray-400 text-left px-10 sm:px-6 lg:px-8 mb-5">
-            Projects Name: e-khairat 2.0
-          </p>
-          <p className="text-md text-gray-400 text-left px-10 sm:px-6 lg:px-8 mb-3">
-            Technologies Used: Vue.js, Nuxt 3, Tailwind CSS, MySQL, Nginx,
-            Prisma and Postman
-          </p>
-          <p className="text-md text-gray-400 text-left px-10 sm:px-6 lg:px-8">
-            Description:
-          </p>
-          <p className="text-md text-gray-400 text-left px-10 sm:px-6 lg:px-8">
-            E-Khairat refers to an online platform or system used by mosques,
-            suraus, and other Islamic organizations in Malaysia to manage and
-            administer Khairat Kematian (death welfare) programs. It allows for
-            the online registration of members, payment of contributions, and
-            management of claims, ensuring a more organized and efficient system
-            for fulfilling the Fardhu Kifayah (collective obligation).
-          </p>
+          {/* first project : e-khairat 2.0 */}
+          <div className=" px-10 sm:px-6 lg:px-8 mb-3 text-justify">
+            <p className="text-lg text-gray-400  ">
+              <span className="mr-2">Projects Name:</span>
+              <span className="text-gray-300">e-khairat 2.0</span>
+            </p>
+
+            <p className="text-md text-gray-400  ">
+              <span className="mr-2">Technologies Used:</span>
+              <span className="text-gray-300">
+                Vue.js, Nuxt 3, Tailwind CSS, MySQL, Nginx, Prisma, and Postman
+              </span>
+            </p>
+            <br />
+            <p className="text-md text-gray-300  ">
+              <span className="mr-2">Description:</span>
+              <br />
+
+              <span className="text-gray-100">
+                E-Khairat refers to an online platform or system used by
+                mosques, suraus, and other Islamic organizations in Malaysia to
+                manage and administer Khairat Kematian (death welfare) programs.
+                It allows for the online registration of members, payment of
+                contributions, and management of claims, ensuring a more
+                organized and efficient system for fulfilling the Fardhu Kifayah
+                (collective obligation).
+              </span>
+            </p>
+            <br />
+
+            <div className="text-md text-gray-400  ">
+              <span className="mr-2">My Resposibilities</span>
+              <br />
+              <br />
+              <span className="text-gray-100">
+                <ul>Owner-Level (Super Admin – Level 1)</ul>
+                <ol className="list-decimal pl-5">
+                  <li>
+                    Developed Owner Dashboard for viewing system statistics.
+                  </li>
+                  <li>
+                    Built the &quot;Senarai Organisasi&quot; module to allow
+                    CRUD operations for Level 3 entities (Masjid/Persatuan)
+                  </li>
+                  <li>
+                    Created &quot;Pengurusan Organisasi&quot; module to approve
+                    newly registered Masjid/Persatuan
+                  </li>
+                </ol>
+              </span>
+              {/* level3 : masjid */}
+              <br />
+              <span className="text-gray-100">
+                <ul>
+                  Mosque/Organization/Surau (Admin – Level 3) and Surau/Zon
+                  (Admin – Level 4)
+                </ul>
+                <ol className="list-decimal pl-5">
+                  <li>
+                    Implemented operations for Masjid/Persatuan/Surau
+                    registration for level 3 and 4 and management.
+                  </li>
+                  <li>
+                    Enabled uploading and updating of PDF documents and
+                    organization logos.
+                  </li>
+                  <li>
+                    Developed settings toggle to enable/disable
+                    self-registration for Level 4 (Surau/Zon) under Level 3.
+                  </li>
+                  <li>
+                    Built &quot;Penerima Khairat&quot; module with dropdown
+                    selection from registered &quot;Ahli Kariah&quot;.
+                  </li>
+                </ol>
+              </span>
+              {/* additional  */}
+              <br />
+              <span className="text-gray-100">
+                <ul>Additional Contributions</ul>
+                <ol className="list-decimal pl-5">
+                  <li>
+                    Integrated Mailjet for email notifications (e.g.,
+                    registration , password recovery)
+                  </li>
+                  <li>
+                    Integrated TextMeBox API to send WhatsApp alerts on new
+                    organization registration.
+                  </li>
+                  <li>
+                    Developed settings toggle to enable/disable
+                    self-registration for Level 4 (Surau/Zon) under Level 3.
+                  </li>
+                  <li>
+                    Update source code and deployed project using Nginx on Linux
+                    server via PuTTY and PM2
+                    <ul className="list-disc pl-5">
+                      <li>
+                        Performed version updates with git pull, yarn build, and
+                        pm2 restart
+                      </li>
+                      <li>
+                        Managed the .env file for environment variables and
+                        other API keys
+                      </li>
+                      <li>
+                        Worked with Prisma (an ORM tool) to generate database
+                        clients and migrate database schemas
+                      </li>
+                    </ul>
+                  </li>
+                </ol>
+              </span>
+            </div>
+          </div>
+          <br />
+          {/* second project : ICIS */}
+          <div className="px-10 sm:px-6 lg:px-8 mb-3 text-justify">
+            <p className="text-lg text-gray-400  ">
+              <span className="mr-2">Projects Name:</span>
+              <span className="text-gray-300">ICIS</span>
+            </p>
+            <p className="text-md text-gray-400  ">
+              <span className="mr-2">Technologies Used:</span>
+              <span className="text-gray-300">
+                Vue.js, PrimeVue , Tailwind CSS, MySQL, and Laravel.
+              </span>
+            </p>
+            <br />
+            <div className="text-md text-gray-300  ">
+              <span className="mr-2">Description:</span>
+              <br />
+
+              <span className="text-gray-100">
+                ICIS is a system developed to manage internal operations within
+                the company, including Helpdesk monitoring, task activity
+                tracking, team KPI evaluation, and more.
+              </span>
+              <br />
+              <br />
+              <div className="text-md text-gray-400  ">
+                <span className="mr-2">My Resposibilities</span>
+                <br />
+                <br />
+                <span className="text-gray-100">
+                  <ol className="list-decimal pl-5">
+                    <li>
+                      Developed the interactive dashboard module using Vue.js
+                      and PrimeVue UI components.
+                    </li>
+                    <li>
+                      Participated in early-stage prototyping to help evaluate
+                      frontend component libraries and charting solutions.
+                    </li>
+                  </ol>
+                </span>
+              </div>
+            </div>
+            <br />
+          </div>
         </div>
       </section>
 
-      <footer className="bg-gray-800 text-gray-300 py-4 text-center border-t border-gray-700">
+      <footer className="bg-gray-800 text-gray-300 py-4 text-center border-t border-gray-700 mt-2">
         <p>&copy; {new Date().getFullYear()} Hasya Binti Abdul Manan</p>
       </footer>
     </div>
